@@ -1,0 +1,1 @@
+<?php $this->load->view('travels/site/' . $template); ?>

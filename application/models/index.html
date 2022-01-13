@@ -1,0 +1,16 @@
+ class admin_model extends CI_Model {
+   
+	public function __construct() {
+        parent::__construct();
+        $this->load->helper('date');
+    }
+
+ public function check_login($data) {
+        $query = $this->db->get_where('e_admin', array('user_id' => $data['user_name'], 'password like binary' => $data['password']));
+
+        if ($query->num_rows() == 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
